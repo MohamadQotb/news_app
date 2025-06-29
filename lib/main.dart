@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/app_theme.dart';
 import 'package:news_app/features/home/view/home_screen.dart';
+import 'package:news_app/features/home/viewModel/app_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => AppSettingsProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: context.watch<AppSettingsProvider>().themeMode,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       routes: {HomeScreen.routeName: (_) => HomeScreen()},

@@ -1,6 +1,10 @@
 class AppAssets {
   //icons ----------->
   static const String searchIcon = 'assets/icons/searchIcon.png';
+  static const String homeIcon = 'assets/icons/homeIcon.png';
+  static const String themeIcon = 'assets/icons/themeIcon.png';
+  static const String languageIcon = 'assets/icons/languageIcon.png';
+  static const String vectorIcon = 'assets/icons/vectorIcon.png';
 
   //categoryImages--------->
   static const String buisnessCat = 'assets/images/buisnessImage.png';

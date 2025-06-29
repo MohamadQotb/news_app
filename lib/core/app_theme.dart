@@ -78,6 +78,33 @@ class AppTheme {
         ),
       ),
     ),
+    listTileTheme: ListTileThemeData(
+      titleTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        color: AppColors.white,
+      ),
+      iconColor: AppColors.white,
+    ),
+    dividerColor: AppColors.white,
+    tabBarTheme: TabBarThemeData(
+      dividerColor: Colors.transparent,
+      tabAlignment: TabAlignment.start,
+      indicatorColor: AppColors.black,
+      labelColor: AppColors.black,
+      labelStyle: TextStyle(
+        color: AppColors.white,
+        fontSize: 16,
+        fontWeight: FontWeight.w700,
+      ),
+      unselectedLabelStyle: TextStyle(
+        color: AppColors.black,
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+      ),
+      unselectedLabelColor: AppColors.black,
+      labelPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+    ),
   );
 
   //DarkTheme------------->
@@ -156,6 +183,33 @@ class AppTheme {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         ),
       ),
+    ),
+    listTileTheme: ListTileThemeData(
+      titleTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        color: AppColors.white,
+      ),
+      iconColor: AppColors.white,
+    ),
+    dividerColor: AppColors.white,
+    tabBarTheme: TabBarThemeData(
+      dividerColor: Colors.transparent,
+      tabAlignment: TabAlignment.start,
+      indicatorColor: AppColors.white,
+      labelColor: AppColors.white,
+      labelStyle: TextStyle(
+        color: AppColors.white,
+        fontSize: 16,
+        fontWeight: FontWeight.w700,
+      ),
+      unselectedLabelStyle: TextStyle(
+        color: AppColors.white,
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+      ),
+      unselectedLabelColor: AppColors.white,
+      labelPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 15),
     ),
   );
 }

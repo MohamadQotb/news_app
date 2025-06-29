@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/core/app_colors.dart';
 import 'package:news_app/core/app_extention.dart';
 import 'package:news_app/features/home/models/category_model_class.dart';
 

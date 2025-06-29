@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:news_app/core/app_assets.dart';
 import 'package:news_app/core/app_extention.dart';
 import 'package:news_app/features/home/models/category_model_class.dart';
-import 'package:news_app/features/home/widgets/category_widget.dart';
+import 'package:news_app/features/home/view/widgets/category_widget.dart';
 
 class CategoryView extends StatelessWidget {
-  const CategoryView({super.key});
+  final void Function(CategoryModelClass) onCatClicked;
+  const CategoryView({super.key, required this.onCatClicked});
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +56,13 @@ class CategoryView extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context, index) => SizedBox(height: 16),
-              itemBuilder: (context, index) =>
-                  CategoryWidget(category: categories[index], index: index),
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () => onCatClicked(categories[index]),
+                child: CategoryWidget(
+                  category: categories[index],
+                  index: index,
+                ),
+              ),
 
               itemCount: categories.length,
             ),
