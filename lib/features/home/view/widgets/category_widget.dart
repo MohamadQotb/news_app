@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/app_colors.dart';
 import 'package:news_app/core/app_extention.dart';
-import 'package:news_app/features/home/view/models/category_model_class.dart';
+import 'package:news_app/features/home/models/category_model_class.dart';
 
 class CategoryWidget extends StatelessWidget {
   final CategoryModelClass category;
