@@ -18,6 +18,4 @@ class SourcesFailureState extends SourcesCubitStates {
   SourcesFailureState({required this.message});
 }
 
-class SourcesSuccessEmptyListState extends SourcesCubitStates {
-  final List<SourcesModel>? sources = [];
-}
+class SourcesSuccessEmptyListState extends SourcesCubitStates {}

@@ -11,6 +11,7 @@ class SourcesCubit extends Cubit<SourcesCubitStates> {
       List<SourcesModel>? sources = await SourcesApi.getNewsSources(category);
       if (sources == null) {
         emit(SourcesSuccessEmptyListState());
+        return;
       }
       emit(SourcesSuccessState(sources: sources));
     } catch (e) {

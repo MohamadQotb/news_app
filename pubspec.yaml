@@ -38,6 +38,8 @@ dependencies:
   provider: ^6.1.5
   http: ^1.4.0
   flutter_bloc: ^9.1.1
+  timeago: ^3.7.1
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:

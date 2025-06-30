@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/core/app_extention.dart';
 import 'package:news_app/features/home/models/category_model_class.dart';
 import 'package:news_app/features/newsArticles/view/views/articles_view.dart';
 import 'package:news_app/features/newsSources/modelView/cubit/sources_cubit.dart';
@@ -16,6 +17,7 @@ class CategoryDetailsView extends StatefulWidget {
 
 class _CategoryDetailsViewState extends State<CategoryDetailsView> {
   SourcesCubit sourcesCubit = SourcesCubit();
+
   @override
   void initState() {
     // TODO: implement initState
@@ -35,14 +37,21 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
           switch (state) {
             case SourcesInitialState():
             case SourcesLoadingState():
-              return Center(child: CircularProgressIndicator());
+              return Center(
+                child: CircularProgressIndicator(
+                  color: context.getColor().secondaryHeaderColor,
+                ),
+              );
             case SourcesFailureState():
               return Center(child: Text('${state.message}'));
             case SourcesSuccessEmptyListState():
-              return Center(child: Text('No Data'));
+              return Center(
+                child: Text('No Data', style: context.getTextStyle().bodyLarge),
+              );
             case SourcesSuccessState():
               return DefaultTabController(
                 length: state.sources!.length,
+
                 child: Column(
                   children: [
                     NewsSourcesView(

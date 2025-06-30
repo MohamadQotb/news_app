@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/app_extention.dart';
+import 'package:news_app/features/newsArticles/model/news_articles_model.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class NewsCardWidget extends StatelessWidget {
-  const NewsCardWidget({super.key});
+  const NewsCardWidget({super.key, required this.article});
+  final Articles article;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,8 @@ class NewsCardWidget extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadiusGeometry.circular(16),
             child: Image.network(
-              'https://wallpapers.com/images/hd/news-pictures-3840-x-2160-acux49abefxdu7qs.jpg',
+              article.urlToImage ??
+                  'https://wallpapers.com/images/hd/news-pictures-3840-x-2160-acux49abefxdu7qs.jpg',
               height: context.getSize().height * 0.258,
               fit: BoxFit.cover,
             ),
@@ -30,7 +34,7 @@ class NewsCardWidget extends StatelessWidget {
           SizedBox(height: 10),
           Expanded(
             child: Text(
-              '40-year-old man falls 200 feet to his death while canyoneering at national park',
+              article.title ?? '',
               style: context.getTextStyle().labelLarge,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -38,9 +42,19 @@ class NewsCardWidget extends StatelessWidget {
           ),
           Row(
             children: [
-              Text('By : Jon Haworth', style: context.getTextStyle().bodySmall),
+              Expanded(
+                child: Text(
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  article.author ?? 'By:UnKnown',
+                  style: context.getTextStyle().bodySmall,
+                ),
+              ),
               Spacer(),
-              Text('15 minutes ago', style: context.getTextStyle().bodySmall),
+              Text(
+                timeago.format(DateTime.parse(article.publishedAt!)),
+                style: context.getTextStyle().bodySmall,
+              ),
             ],
           ),
         ],
