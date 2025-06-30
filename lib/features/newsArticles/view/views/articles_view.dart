@@ -77,7 +77,9 @@ class _TabContentState extends State<TabContent> {
                   widget.sourceId!,
                 );
               },
-              child: ListView.builder(
+              child: ListView.separated(
+                separatorBuilder: (context, index) => SizedBox(height: 16),
+                padding: EdgeInsets.all(8),
                 itemBuilder: (context, index) =>
                     NewsCardWidget(article: state.articles![index]),
                 itemCount: state.articles!.length, //---------------
