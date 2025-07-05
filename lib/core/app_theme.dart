@@ -19,6 +19,7 @@ class AppTheme {
         fontWeight: FontWeight.bold,
       ),
     ),
+
     textTheme: TextTheme(
       //home screen text styles
       titleLarge: TextStyle(
@@ -125,6 +126,7 @@ class AppTheme {
         fontWeight: FontWeight.bold,
       ),
     ),
+
     textTheme: TextTheme(
       //home screen text styles
       titleLarge: TextStyle(

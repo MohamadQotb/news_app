@@ -23,12 +23,12 @@ class SourcesResponse {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["status"] = status;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["status"] = status;
     if (sources != null) {
-      _data["sources"] = sources?.map((e) => e.toJson()).toList();
+      data["sources"] = sources?.map((e) => e.toJson()).toList();
     }
-    return _data;
+    return data;
   }
 }
 
@@ -80,14 +80,14 @@ class SourcesModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["id"] = id;
-    _data["name"] = name;
-    _data["description"] = description;
-    _data["url"] = url;
-    _data["category"] = category;
-    _data["language"] = language;
-    _data["country"] = country;
-    return _data;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["id"] = id;
+    data["name"] = name;
+    data["description"] = description;
+    data["url"] = url;
+    data["category"] = category;
+    data["language"] = language;
+    data["country"] = country;
+    return data;
   }
 }

@@ -13,12 +13,12 @@ class DrawerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> themeMenuItem = [
-      DropdownMenuItem(child: Text('Light'), value: 'Light'),
-      DropdownMenuItem(child: Text('Dark'), value: 'Dark'),
+      DropdownMenuItem(value: 'Light', child: Text('Light')),
+      DropdownMenuItem(value: 'Dark', child: Text('Dark')),
     ];
     List<DropdownMenuItem<String>> languageMenuItem = [
-      DropdownMenuItem(child: Text('Arabic'), value: 'ar'),
-      DropdownMenuItem(child: Text('English'), value: 'en'),
+      DropdownMenuItem(value: 'ar', child: Text('Arabic')),
+      DropdownMenuItem(value: 'en', child: Text('English')),
     ];
     String? selectedLanguage =
         context.read<AppSettingsProvider>().language == 'en' ? 'en' : 'ar';

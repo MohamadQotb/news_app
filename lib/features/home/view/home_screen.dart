@@ -5,6 +5,7 @@ import 'package:news_app/features/home/models/category_model_class.dart';
 import 'package:news_app/features/home/view/views/category_details_view.dart';
 import 'package:news_app/features/home/view/views/category_view.dart';
 import 'package:news_app/features/home/view/views/drawer_view.dart';
+import 'package:news_app/features/search/view/search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "/homeScreen";
@@ -39,7 +40,12 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: ImageIcon(AssetImage(AppAssets.searchIcon)),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(SearchScreen.routeName);
+              },
+              child: ImageIcon(AssetImage(AppAssets.searchIcon)),
+            ),
           ),
         ],
       ),
