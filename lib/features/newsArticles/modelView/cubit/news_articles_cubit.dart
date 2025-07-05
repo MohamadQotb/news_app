@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/features/newsArticles/model/news_articles_api.dart';
 import 'package:news_app/features/newsArticles/model/news_articles_model.dart';
@@ -5,11 +6,12 @@ import 'package:news_app/features/newsArticles/modelView/cubit/news_articles_cub
 
 class NewsArticlesCubit extends Cubit<NewsArticlesCubitStates> {
   NewsArticlesCubit() : super(NewsArticlesInitialState());
-  getNewsArticles(String sourceID) async {
+  getNewsArticles(String sourceID, BuildContext context) async {
     emit(NewsArticlesLoadingState());
     try {
       List<Articles>? articles = await NewsArticlesApi.getNewsArticles(
         sourceID,
+        context,
       );
       if (articles == null || articles.isEmpty) {
         emit(NewsArticlesEmptyListState());

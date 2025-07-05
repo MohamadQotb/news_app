@@ -6,18 +6,25 @@ import 'package:news_app/features/home/viewModel/app_provider.dart';
 import 'package:news_app/features/search/view/search_screen.dart';
 import 'package:news_app/features/search/view_model/search_cubit.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'l10n/app_localizations.dart';
 
 void main() {
   runApp(
     ChangeNotifierProvider(
       create: (context) => AppSettingsProvider(),
-      child: const MyApp(),
+      child: Consumer<AppSettingsProvider>(
+        builder: (context, value, child) => value.isLoading
+            ? Center(child: CircularProgressIndicator())
+            : MyApp(provider: value),
+      ),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.provider});
+  final AppSettingsProvider provider;
 
   // This widget is the root of your application.
   @override
@@ -25,8 +32,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: context.watch<AppSettingsProvider>().themeMode,
+      themeMode: provider.themeMode,
+      locale: Locale(provider.language),
       title: 'Flutter Demo',
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('ar'), // arabic
+      ],
       debugShowCheckedModeBanner: false,
       routes: {
         HomeScreen.routeName: (_) => HomeScreen(),

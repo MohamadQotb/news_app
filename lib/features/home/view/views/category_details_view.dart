@@ -23,7 +23,10 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
     // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await sourcesCubit.getNewsSources(widget.selectedCategory.categoryName);
+      await sourcesCubit.getNewsSources(
+        widget.selectedCategory.categoryName,
+        context,
+      );
     });
   }
 
@@ -46,7 +49,10 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
               return Center(child: Text('${state.message}'));
             case SourcesSuccessEmptyListState():
               return Center(
-                child: Text('No Data', style: context.getTextStyle().bodyLarge),
+                child: Text(
+                  context.loc.noNewsAvailable,
+                  style: context.getTextStyle().bodyLarge,
+                ),
               );
             case SourcesSuccessState():
               return DefaultTabController(

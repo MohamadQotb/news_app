@@ -1,0 +1,23 @@
+{
+  "goodMorning": "Good Morning",
+  "newsForYou": "Here is Some News For You",
+  "viewAll": "View All",
+  "general": "General",
+  "health": "Health",
+  "sports": "Sports",
+  "business": "Business",
+  "science": "Science",
+  "entertainment": "Entertainment",
+  "technology": "Technology",
+  "home": "Home",
+  "viewFullArticle": "View Full Article",
+  "search": "Search",
+  "goToHome": "Go To Home",
+  "theme": "Theme",
+  "dark": "Dark",
+  "light": "Light",
+  "language": "Language",
+  "arabic": "Arabic",
+  "english": "English",
+  "noNewsAvailable":"No News Available!"
+}

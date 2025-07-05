@@ -24,6 +24,7 @@ class CategoryWidget extends StatelessWidget {
           ? Padding(
               padding: const EdgeInsets.only(right: 16),
               child: Row(
+                textDirection: TextDirection.ltr,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                 children: [
@@ -62,9 +63,10 @@ class CategoryWidget extends StatelessWidget {
                           borderRadius: BorderRadius.circular(84),
                         ),
                         child: Row(
+                          textDirection: TextDirection.ltr,
                           children: [
                             Text(
-                              'View All',
+                              context.loc.viewAll,
                               style: context.getTextStyle().titleLarge,
                             ),
                             Container(
@@ -75,6 +77,7 @@ class CategoryWidget extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10000),
                               ),
                               child: Icon(
+                                textDirection: TextDirection.ltr,
                                 Icons.arrow_forward_ios_rounded,
                                 color: context.getColor().secondaryHeaderColor,
                               ),
@@ -91,6 +94,7 @@ class CategoryWidget extends StatelessWidget {
               padding: const EdgeInsets.only(left: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                textDirection: TextDirection.ltr,
                 children: [
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -112,6 +116,7 @@ class CategoryWidget extends StatelessWidget {
                           borderRadius: BorderRadius.circular(84),
                         ),
                         child: Row(
+                          textDirection: TextDirection.ltr,
                           children: [
                             Container(
                               margin: EdgeInsets.only(right: 16),
@@ -121,12 +126,13 @@ class CategoryWidget extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10000),
                               ),
                               child: Icon(
+                                textDirection: TextDirection.ltr,
                                 Icons.arrow_back_ios_new_rounded,
                                 color: context.getColor().secondaryHeaderColor,
                               ),
                             ),
                             Text(
-                              'View All',
+                              context.loc.viewAll,
                               style: context.getTextStyle().titleLarge,
                             ),
                           ],

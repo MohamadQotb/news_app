@@ -12,33 +12,33 @@ class CategoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<CategoryModelClass> categories = [
       CategoryModelClass(
-        categoryName: 'General',
+        categoryName: context.loc.general,
         categoryImage: AppAssets.generalCat,
       ),
       CategoryModelClass(
-        categoryName: 'Business',
+        categoryName: context.loc.business,
         categoryImage: AppAssets.buisnessCat,
       ),
 
       CategoryModelClass(
-        categoryName: 'Sports',
+        categoryName: context.loc.sports,
         categoryImage: AppAssets.sportsCat,
       ),
       CategoryModelClass(
-        categoryName: 'Technology',
+        categoryName: context.loc.technology,
         categoryImage: AppAssets.technologyCat,
       ),
       CategoryModelClass(
-        categoryName: 'Entertainment',
+        categoryName: context.loc.entertainment,
         categoryImage: AppAssets.entertainmentcat,
       ),
       CategoryModelClass(
-        categoryName: 'Health',
+        categoryName: context.loc.health,
         categoryImage: AppAssets.healthCat,
       ),
 
       CategoryModelClass(
-        categoryName: 'Science',
+        categoryName: context.loc.science,
         categoryImage: AppAssets.scienceCat,
       ),
     ];
@@ -48,7 +48,7 @@ class CategoryView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Good Morning\nHere is Some News For You',
+            '${context.loc.goodMorning}\n${context.loc.newsForYou}',
             style: context.getTextStyle().titleLarge,
           ),
           SizedBox(height: 16),

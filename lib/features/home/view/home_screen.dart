@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/app_assets.dart';
 import 'package:news_app/core/app_colors.dart';
+import 'package:news_app/core/app_extention.dart';
 import 'package:news_app/features/home/models/category_model_class.dart';
 import 'package:news_app/features/home/view/views/category_details_view.dart';
 import 'package:news_app/features/home/view/views/category_view.dart';
@@ -35,7 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       appBar: AppBar(
         title: Text(
-          selectedCategory == null ? 'Home' : selectedCategory!.categoryName,
+          selectedCategory == null
+              ? context.loc.home
+              : selectedCategory!.categoryName,
         ),
         actions: [
           Padding(

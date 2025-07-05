@@ -49,7 +49,7 @@ class BottomSheetDetails extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 56),
                 ),
-                child: Text('View Full Article'),
+                child: Text(context.loc.viewFullArticle),
               ),
             ],
           ),

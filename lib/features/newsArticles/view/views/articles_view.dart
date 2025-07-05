@@ -46,7 +46,10 @@ class _TabContentState extends State<TabContent> {
   @override
   void initState() {
     super.initState();
-    context.read<NewsArticlesCubit>().getNewsArticles(widget.sourceId!);
+    context.read<NewsArticlesCubit>().getNewsArticles(
+      widget.sourceId!,
+      context,
+    );
   }
 
   @override
@@ -66,7 +69,7 @@ class _TabContentState extends State<TabContent> {
           case NewsArticlesEmptyListState():
             return Center(
               child: Text(
-                'No Articles Here!',
+                context.loc.noNewsAvailable,
                 style: context.getTextStyle().labelLarge,
               ),
             );
@@ -75,6 +78,7 @@ class _TabContentState extends State<TabContent> {
               onRefresh: () {
                 return context.read<NewsArticlesCubit>().getNewsArticles(
                   widget.sourceId!,
+                  context,
                 );
               },
               child: ListView.separated(

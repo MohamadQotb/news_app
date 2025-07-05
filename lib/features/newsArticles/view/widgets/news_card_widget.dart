@@ -52,7 +52,7 @@ class NewsCardWidget extends StatelessWidget {
                   child: Text(
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    article.author ?? 'By:UnKnown',
+                    'By:${article.author ?? 'UnKnown'}',
                     style: context.getTextStyle().bodySmall,
                   ),
                 ),

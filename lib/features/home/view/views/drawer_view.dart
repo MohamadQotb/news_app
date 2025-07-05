@@ -13,12 +13,12 @@ class DrawerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> themeMenuItem = [
-      DropdownMenuItem(value: 'Light', child: Text('Light')),
-      DropdownMenuItem(value: 'Dark', child: Text('Dark')),
+      DropdownMenuItem(value: 'Light', child: Text(context.loc.light)),
+      DropdownMenuItem(value: 'Dark', child: Text(context.loc.dark)),
     ];
     List<DropdownMenuItem<String>> languageMenuItem = [
-      DropdownMenuItem(value: 'ar', child: Text('Arabic')),
-      DropdownMenuItem(value: 'en', child: Text('English')),
+      DropdownMenuItem(value: 'ar', child: Text(context.loc.arabic)),
+      DropdownMenuItem(value: 'en', child: Text(context.loc.english)),
     ];
     String? selectedLanguage =
         context.read<AppSettingsProvider>().language == 'en' ? 'en' : 'ar';
@@ -42,7 +42,7 @@ class DrawerView extends StatelessWidget {
                 onTap: onTap,
 
                 leading: ImageIcon(AssetImage(AppAssets.homeIcon)),
-                title: Text('Go To Home'),
+                title: Text(context.loc.goToHome),
               ),
               Divider(color: AppColors.white),
               SizedBox(height: 24),
@@ -57,7 +57,7 @@ class DrawerView extends StatelessWidget {
                         color: AppColors.white,
                       ),
                       Text(
-                        'Theme',
+                        context.loc.theme,
                         style: context.getTextStyle().displayMedium,
                       ),
                     ],
@@ -91,7 +91,7 @@ class DrawerView extends StatelessWidget {
                         color: AppColors.white,
                       ),
                       Text(
-                        'Language',
+                        context.loc.language,
                         style: context.getTextStyle().displayMedium,
                       ),
                     ],
@@ -104,7 +104,7 @@ class DrawerView extends StatelessWidget {
                         return;
                       }
                       selectedLanguage = p0;
-                      context.read<AppSettingsProvider>().changeLaguage();
+                      context.read<AppSettingsProvider>().changeLanguage();
                     },
                   ),
                 ],

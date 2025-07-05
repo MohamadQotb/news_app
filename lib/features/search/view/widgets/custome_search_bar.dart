@@ -24,7 +24,7 @@ class CustomeSearchBar extends StatelessWidget {
         color: context.getColor().secondaryHeaderColor,
       ),
       decoration: InputDecoration(
-        hintText: 'Search',
+        hintText: context.loc.search,
         hintStyle: context.getTextStyle().displayMedium?.copyWith(
           fontWeight: FontWeight.w500,
           color: context.getColor().secondaryHeaderColor,

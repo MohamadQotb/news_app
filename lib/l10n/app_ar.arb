@@ -1,0 +1,23 @@
+{
+  "goodMorning": "صباح الخير",
+  "newsForYou": "إليك بعض الأخبار لك",
+  "viewAll": "عرض الكل",
+  "general": "عام",
+  "health": "الصحة",
+  "sports": "الرياضة",
+  "business": "الأعمال",
+  "science": "العلوم",
+  "entertainment": "الترفيه",
+  "technology": "التكنولوجيا",
+  "home": "الرئيسية",
+  "viewFullArticle": "عرض المقال كاملًا",
+  "search": "بحث",
+  "goToHome": "الذهاب للرئيسية",
+  "theme": "السمة",
+  "dark": "داكن",
+  "light": "فاتح",
+  "language": "اللغة",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "noNewsAvailable":"لا توجد اخبار !"
+}

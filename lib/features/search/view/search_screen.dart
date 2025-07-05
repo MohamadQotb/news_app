@@ -39,7 +39,7 @@ class SearchScreen extends StatelessWidget {
                     return SliverToBoxAdapter(
                       child: Center(
                         child: Text(
-                          'No News Available!',
+                          context.loc.noNewsAvailable,
                           style: context.getTextStyle().bodyMedium,
                         ),
                       ),
@@ -66,7 +66,7 @@ class SearchScreen extends StatelessWidget {
                     return SliverToBoxAdapter(
                       child: Center(
                         child: Text(
-                          'No News Available!',
+                          context.loc.noNewsAvailable,
                           style: context.getTextStyle().bodyMedium,
                         ),
                       ),
